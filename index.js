@@ -56,7 +56,7 @@ async function setCredentials(git) {
 async function setupWorktree(git, branch) {
     await fs.ensureDir(WORKTREE_DIR);
     await git.raw(['worktree', 'add', WORKTREE_DIR, branch]).catch(async () => {
-        await git.raw(['worktree', 'add', WORKTREE_DIR, '--orphan', branch]);
+        await git.raw(['worktree', 'add', WORKTREE_DIR, '--orphan']);
         await fs.writeJson(path.join(WORKTREE_DIR, FILE_NAME), {});
         const worktreeGit = simpleGit(WORKTREE_DIR);
         await worktreeGit.add(FILE_NAME);
