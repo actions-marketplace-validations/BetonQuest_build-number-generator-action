@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Generate Build Number
-        uses: BetonQuest/build-number-generator@main
+        uses: BetonQuest/build-number-generator-action@main
         id: generate
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +65,7 @@ Detailed Configuration:
 
 ````yaml
       - name: Generate Build Number
-        uses: BetonQuest/build-number-generator@main
+        uses: BetonQuest/build-number-generator-action@main
         id: generate
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
